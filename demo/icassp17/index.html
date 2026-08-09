@@ -1,0 +1,203 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-171609755-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-171609755-1');
+</script>
+<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Exemplar Selection Methods in Voice Conversion</title>
+<link rel="icon" href="../../media/image/favicon.png"></head>
+<style>
+body{
+	padding: 0;
+	margin: 0;
+}
+
+.title {
+	background-color: rgb(80,0,0);
+	width: 100%;
+}
+
+.title td{
+	padding: 5px;
+}
+
+.title .logo{
+	width: 220px;
+}
+
+.title h1{
+	font-size: 18pt;
+	font-family: avant garde, verdana, helvetica, sans-serif;
+	color: white;
+	line-height: 1.15;
+}
+
+.title h2{
+	font-size: 12pt;
+	font-family: georgia, times new roman, serif;
+	font-style: italic;
+	color: white;
+	line-height: 1.15;
+}
+
+main{
+	font-family: serif;
+	font-size: 18px;
+	padding: 0 10px 0 10px;
+}
+
+main h1{
+	font-family: sans-serif;
+	font-size: 24px;
+}
+
+main table.samples{
+
+}
+
+main table.samples th{
+	border-bottom: 2px solid #333;
+	width: 16%;
+	height: 60px;
+}
+
+main table.samples td{
+	border-right: 1px #333 solid;
+	border-bottom: 1px #666 solid;
+	width: 16%;
+	height: 60px;
+	text-align: center;
+	vertical-align : middle;
+}
+
+.mtf { 
+	background-color: rgb(225, 225, 255);
+}
+
+.ftm{
+	background-color: rgb(255, 225, 225);
+}
+
+.source{
+	background-color: rgb(225, 255, 225);
+}
+</style>
+<body>
+<table class="title">
+<tbody>
+<tr>
+<td>
+<h1>Exemplar Selection Methods in Voice Conversion</h1>
+<h2>Guanlong Zhao, Ricardo Gutierrez-Osuna</h2>
+</td>
+<td class="logo">
+<img style="width: 219px; height: 38px;" src="media/logo.png" alt="" align="top">
+</tr>
+</tbody>
+</table>
+<main>
+
+<p>Notes:</p>
+
+<ul>
+<li>Source and target speaker's speech was resynthesized from NMF decomposition</li>
+<li>Row 1, 2, and 4 use 300 exemplars selected using the proposed FWD algorithm</li>
+<li>Row 3 uses 204 exemplars selected using the proposed BKW algorithm</li>
+<li>Please refer to our <a href="media/icassp17/icassp17_zhao.pdf">paper</a> for more details</li>
+</ul>
+
+<table width="100%" class="samples">
+<tbody>
+	<tr>
+		<th>Source speaker</th>
+		<th>Target speaker</th>
+		<th>Voice conversion</th>
+	</tr>
+	<tr>
+		<td>
+			<p>BDL (male)</p>
+			<audio controls="">
+				<source src="media/icassp17/samples/bdl_rms_bdl.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+			</audio>
+		</td>
+		<td>
+			<p>RMS (male)</p>
+			<audio controls="">
+				<source src="media/icassp17/samples/bdl_rms_rms.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+			</audio>
+		</td>
+		<td>
+			<audio controls="">
+				<source src="media/icassp17/samples/bdl_rms_vc.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+			</audio>
+		</td>
+	</tr>
+
+	<tr>
+		<td>
+			<p>BDL (male)</p>
+			<audio controls="">
+				<source src="media/icassp17/samples/bdl_slt_bdl.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+			</audio>
+		</td>
+		<td>
+			<p>SLT (female)</p>
+			<audio controls="">
+				<source src="media/icassp17/samples/bdl_slt_slt.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+			</audio>
+		</td>
+		<td>
+			<audio controls="">
+				<source src="media/icassp17/samples/bdl_slt_vc.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+			</audio>
+		</td>
+	</tr>
+	
+	<tr>
+		<td>
+			<p>CLB (female)</p>
+			<audio controls="">
+				<source src="media/icassp17/samples/clb_rms_clb.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+			</audio>
+		</td>
+		<td>
+			<p>RMS (male)</p>
+			<audio controls="">
+				<source src="media/icassp17/samples/clb_rms_rms.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+			</audio>
+		</td>
+		<td>
+			<audio controls="">
+				<source src="media/icassp17/samples/clb_rms_vc.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+			</audio>
+		</td>
+	</tr>
+	
+	<tr>
+		<td>
+			<p>CLB (female)</p>
+			<audio controls="">
+				<source src="media/icassp17/samples/clb_slt_clb.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+			</audio>
+		</td>
+		<td>
+			<p>SLT (female)</p>
+			<audio controls="">
+				<source src="media/icassp17/samples/clb_slt_slt.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+			</audio>
+		</td>
+		<td>
+			<audio controls="">
+				<source src="media/icassp17/samples/clb_slt_vc.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+			</audio>
+		</td>
+	</tr>
+</tbody>
+</table>
+</main>
+</body></html>

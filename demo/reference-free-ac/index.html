@@ -1,0 +1,522 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-171609755-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-171609755-1');
+</script>
+<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Reference-Free AC Audio Samples</title>
+<link rel="icon" href="../../media/image/favicon.png"></head>
+<style>
+body{
+    padding: 0;
+    margin: 0;
+}
+
+.title {
+    background-color: rgb(80,0,0);
+    width: 100%;
+    text-align: center
+}
+
+.title td{
+    padding: 5px;
+}
+
+.title .logo{
+    width: 220px;
+}
+
+.title h1{
+    font-size: 18pt;
+    font-family: calibri, verdana, helvetica, sans-serif, Arial, Times, serif;
+    color: white;
+    line-height: 1.15;
+}
+
+.title h2{
+    font-size: 12pt;
+    font-family: calibri, verdana, helvetica, sans-serif, Arial, Times, serif;
+    font-style: italic;
+    color: white;
+    line-height: 1.15;
+}
+
+main{
+    font-family: calibri, verdana, helvetica, sans-serif, Arial, Times, serif;
+    font-size: 18px;
+    padding: 0 10px 0 10px;
+}
+
+main h2{
+    font-size: 20px;
+}
+
+main table.samples{
+    text-align: center;
+}
+
+main table.samples th{
+    border-bottom: 2px solid #333;
+    width: 16%;
+    height: 60px;
+}
+
+main table.samples td{
+    border-right: 1px #333 solid;
+    border-bottom: 1px #666 solid;
+    width: 16%;
+    height: 60px;
+}
+
+.mtf { 
+    background-color: rgb(225, 225, 255);
+}
+
+.ftm{
+    background-color: rgb(255, 225, 225);
+}
+
+.source{
+    background-color: rgb(225, 255, 225);
+}
+
+audio{
+  width: 250px;
+}
+
+pre code {
+  background-color: #eee;
+  border: 1px solid #999;
+  display: block;
+  padding: 5px;
+}
+
+</style>
+<body>
+<table class="title">
+<tbody>
+<tr>
+<td>
+<h1>Converting Foreign Accent Speech Without a Reference</h1>
+<h2>Guanlong Zhao, Shaojin Ding, and Ricardo Gutierrez-Osuna</h2>
+<h2>Department of Computer Science and Engineering, Texas A&M University, USA</h2>
+</td>
+</tbody>
+</table>
+<main>
+
+<h2>Notes</h2>
+
+<ul>
+<li>The L1 speaker speaks the General American Accent</li>
+<li>YKWK's native language is Korean</li>
+<li>TXHC's native language is Chinese</li>
+<li>Dataset (L2-ARCTIC corpus [1]): <a href="https://psi.engr.tamu.edu/l2-arctic-corpus/">https://psi.engr.tamu.edu/l2-arctic-corpus/</a></li>
+</ul>
+
+<h2>Experiment 1: Evaluating the reference-based golden speaker (L1-GS)</h2>
+
+<ul>
+    <li><b>L1/L2 reference speech</b>: original unmodified L1/L2 speech recordings</li>
+    <li><b>Senone-PPG</b>: use the senone-PPG as the input</li>
+    <li><b>Mono-PPG</b>: use the monophone PPG as the input</li>
+    <li><b>BNF</b>: use the bottleneck feature vector as the input</li>
+</ul>
+
+<table width="100%" class="samples">
+<tbody>
+    <tr>
+        <th>L2 speaker</th>
+        <th>Text</th>
+        <th>L1 reference speech</th>
+        <th>L2 reference speech</th>
+        <th>Senone-PPG</th>
+        <th>Mono-PPG</th>
+        <th>BNF</th>
+    </tr>
+    <tr>
+        <td rowspan="3">YKWK</td>
+        <td>
+            What an excited whispering and conferring took place.
+        </td>
+        <td>
+            <audio controls="">
+                <source src="wav/reference/bdl-1083.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+            </audio>
+        </td>
+        <td>
+            <audio controls="">
+                <source src="wav/reference/ykwk-1083.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+            </audio>
+        </td>
+        <td>
+            <audio controls="">
+                <source src="wav/ppg2mel/ykwk-senone-1083.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+            </audio>
+        </td>
+        <td>
+            <audio controls="">
+                <source src="wav/ppg2mel/ykwk-mono-1083.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+            </audio>
+        </td>
+        <td>
+            <audio controls="">
+                <source src="wav/ppg2mel/ykwk-bnf-1083.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+            </audio>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            I have seen myself that one man contemplated by Pascal's philosophic eye.
+        </td>
+        <td>
+            <audio controls="">
+                <source src="wav/reference/bdl-1089.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+            </audio>
+        </td>
+        <td>
+            <audio controls="">
+                <source src="wav/reference/ykwk-1089.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+            </audio>
+        </td>
+        <td>
+            <audio controls="">
+                <source src="wav/ppg2mel/ykwk-senone-1089.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+            </audio>
+        </td>
+        <td>
+            <audio controls="">
+                <source src="wav/ppg2mel/ykwk-mono-1089.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+            </audio>
+        </td>
+        <td>
+            <audio controls="">
+                <source src="wav/ppg2mel/ykwk-bnf-1089.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+            </audio>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            And wherever I ranged, the way lay along alcohol drenched roads.
+        </td>
+        <td>
+            <audio controls="">
+                <source src="wav/reference/bdl-1094.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+            </audio>
+        </td>
+        <td>
+            <audio controls="">
+                <source src="wav/reference/ykwk-1094.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+            </audio>
+        </td>
+        <td>
+            <audio controls="">
+                <source src="wav/ppg2mel/ykwk-senone-1094.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+            </audio>
+        </td>
+        <td>
+            <audio controls="">
+                <source src="wav/ppg2mel/ykwk-mono-1094.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+            </audio>
+        </td>
+        <td>
+            <audio controls="">
+                <source src="wav/ppg2mel/ykwk-bnf-1094.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+            </audio>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="3">TXHC</td>
+        <td>
+            And as we hurried up town, Joe Goose explained.
+        </td>
+        <td>
+            <audio controls="">
+                <source src="wav/reference/bdl-1095.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+            </audio>
+        </td>
+        <td>
+            <audio controls="">
+                <source src="wav/reference/txhc-1095.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+            </audio>
+        </td>
+        <td>
+            <audio controls="">
+                <source src="wav/ppg2mel/txhc-senone-1095.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+            </audio>
+        </td>
+        <td>
+            <audio controls="">
+                <source src="wav/ppg2mel/txhc-mono-1095.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+            </audio>
+        </td>
+        <td>
+            <audio controls="">
+                <source src="wav/ppg2mel/txhc-bnf-1095.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+            </audio>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            The scents of strange vegetation blew off the tropic land.
+        </td>
+        <td>
+            <audio controls="">
+                <source src="wav/reference/bdl-1096.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+            </audio>
+        </td>
+        <td>
+            <audio controls="">
+                <source src="wav/reference/txhc-1096.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+            </audio>
+        </td>
+        <td>
+            <audio controls="">
+                <source src="wav/ppg2mel/txhc-senone-1096.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+            </audio>
+        </td>
+        <td>
+            <audio controls="">
+                <source src="wav/ppg2mel/txhc-mono-1096.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+            </audio>
+        </td>
+        <td>
+            <audio controls="">
+                <source src="wav/ppg2mel/txhc-bnf-1096.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+            </audio>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            The life there was healthful and athletic, but too juvenile.
+        </td>
+        <td>
+            <audio controls="">
+                <source src="wav/reference/bdl-1097.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+            </audio>
+        </td>
+        <td>
+            <audio controls="">
+                <source src="wav/reference/txhc-1097.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+            </audio>
+        </td>
+        <td>
+            <audio controls="">
+                <source src="wav/ppg2mel/txhc-senone-1097.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+            </audio>
+        </td>
+        <td>
+            <audio controls="">
+                <source src="wav/ppg2mel/txhc-mono-1097.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+            </audio>
+        </td>
+        <td>
+            <audio controls="">
+                <source src="wav/ppg2mel/txhc-bnf-1097.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+            </audio>
+        </td>
+    </tr>
+</tbody>
+</table>
+
+<h2>Experiment 2: Evaluating the reference-free golden speaker (L2-GS)</h2>
+
+<ul>
+    <li><b>Input speech</b>: original unmodified L2 speech recordings</li>
+    <li><b>Baseline 1</b>: the system of Zhang et al. [2], serving as a baseline model in this work</li>
+    <li><b>Baseline 2</b>: the reference-free FAC system of Liu et al. [3]; samples provided through the courtesy of S. Liu (CUHK)</li>
+    <li><b>Proposed</b>: the proposed reference-free accent conversion model</li>
+</ul>
+
+<table width="100%" class="samples">
+<tbody>
+    <tr>
+        <th>L2 speaker</th>
+        <th>Text</th>
+        <th>Input speech</th>
+        <th>Reference-Free Accent conversion (Baseline 1)</th>
+        <th>Reference-Free Accent conversion (Baseline 2)</th>
+        <th>Reference-Free Accent conversion (Proposed)</th>
+    </tr>
+    <tr>
+        <td rowspan="3">YKWK</td>
+        <td>
+            He had fulfilled his duty and paid properly.
+        </td>
+        <td>
+            <audio controls="">
+                <source src="wav/reference/ykwk-1102.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+            </audio>
+        </td>
+        <td>
+            <audio controls="">
+                <source src="wav/mel2mel/ykwk-baseline1-1102.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+            </audio>
+        </td>
+        <td>
+            <audio controls="">
+                <source src="wav/mel2mel/ykwk-baseline2-1102.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+            </audio>
+        </td>
+        <td>
+            <audio controls="">
+                <source src="wav/mel2mel/ykwk-proposed-1102.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+            </audio>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            But already he had composed himself.
+        </td>
+        <td>
+            <audio controls="">
+                <source src="wav/reference/ykwk-1108.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+            </audio>
+        </td>
+        <td>
+            <audio controls="">
+                <source src="wav/mel2mel/ykwk-baseline1-1108.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+            </audio>
+        </td>
+        <td>
+            <audio controls="">
+                <source src="wav/mel2mel/ykwk-baseline2-1108.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+            </audio>
+        </td>
+        <td>
+            <audio controls="">
+                <source src="wav/mel2mel/ykwk-proposed-1108.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+            </audio>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            The Russian music player, the Count, was her obedient slave.
+        </td>
+        <td>
+            <audio controls="">
+                <source src="wav/reference/ykwk-1116.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+            </audio>
+        </td>
+        <td>
+            <audio controls="">
+                <source src="wav/mel2mel/ykwk-baseline1-1116.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+            </audio>
+        </td>
+        <td>
+            <audio controls="">
+                <source src="wav/mel2mel/ykwk-baseline2-1116.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+            </audio>
+        </td>
+        <td>
+            <audio controls="">
+                <source src="wav/mel2mel/ykwk-proposed-1116.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+            </audio>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="3">TXHC</td>
+        <td>
+            What an excited whispering and conferring took place.
+        </td>
+        <td>
+            <audio controls="">
+                <source src="wav/reference/txhc-1083.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+            </audio>
+        </td>
+        <td>
+            <audio controls="">
+                <source src="wav/mel2mel/txhc-baseline1-1083.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+            </audio>
+        </td>
+        <td>
+            <audio controls="">
+                <source src="wav/mel2mel/txhc-baseline2-1083.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+            </audio>
+        </td>
+        <td>
+            <audio controls="">
+                <source src="wav/mel2mel/txhc-proposed-1083.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+            </audio>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Thus he turned the tenets and jargon of psychology back on me.
+        </td>
+        <td>
+            <audio controls="">
+                <source src="wav/reference/txhc-1085.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+            </audio>
+        </td>
+        <td>
+            <audio controls="">
+                <source src="wav/mel2mel/txhc-baseline1-1085.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+            </audio>
+        </td>
+        <td>
+            <audio controls="">
+                <source src="wav/mel2mel/txhc-baseline2-1085.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+            </audio>
+        </td>
+        <td>
+            <audio controls="">
+                <source src="wav/mel2mel/txhc-proposed-1085.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+            </audio>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            But already he had composed himself.
+        </td>
+        <td>
+            <audio controls="">
+                <source src="wav/reference/txhc-1108.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+            </audio>
+        </td>
+        <td>
+            <audio controls="">
+                <source src="wav/mel2mel/txhc-baseline1-1108.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+            </audio>
+        </td>
+        <td>
+            <audio controls="">
+                <source src="wav/mel2mel/txhc-baseline2-1108.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+            </audio>
+        </td>
+        <td>
+            <audio controls="">
+                <source src="wav/mel2mel/txhc-proposed-1108.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+            </audio>
+        </td>
+    </tr>
+</tbody>
+</table>
+
+<h2>Citation</h2>
+<p>If you would like to cite this work, please refer to the manuscript below,</p>
+<pre>
+<code>
+@article{zhao2021converting,
+  title={Converting Foreign Accent Speech Without a Reference},
+  author={Zhao, Guanlong and Ding, Shaojin and Gutierrez-Osuna, Ricardo},
+  journal={IEEE/ACM Transactions on Audio, Speech, and Language Processing},
+  volume={29},
+  pages={2367--2381},
+  year={2021},
+  publisher={IEEE}
+}
+</code>
+</pre>
+
+<h2>References</h2>
+<p>[1] G. Zhao <i>et al</i>., "L2-ARCTIC: A non-native English speech corpus," in <i>Proc. Interspeech</i>, 2018, pp. 2783-2787.</p>
+<p>[2] J.-X. Zhang, Z.-H. Ling, Y. Jiang, L.-J. Liu, C. Liang, and L.-R. Dai, "Improving sequence-to-sequence acoustic modeling by adding text-supervision," in <i>Proc. ICASSP</i>, 2019, pp. 6785-6789.</p>
+<p>[3] S. Liu <i>et al</i>., "End-to-end accent conversion without using native utterances," in <i>Proc. ICASSP</i>, 2020, pp. 6289-6293.</p>
+</main>
+</body></html>
